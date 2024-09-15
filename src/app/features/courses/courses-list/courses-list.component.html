@@ -1,1 +1,28 @@
-<p>courses-list works!</p>
+<div class="courses-list d-flex flex-column">
+  <app-course-card
+    *ngFor="let course of courses"
+    [title]="course.title"
+    [description]="course.description"
+    [creationDate]="course.creationDate"
+    [duration]="course.duration"
+    [authors]="course.authors"
+    [editable]="editable"
+  >
+    <!-- Pass iconName as input to app-button -->
+    <app-button 
+    show-button 
+    [buttonText]="'Show Course'"
+    (click)="onShowCourse(course)"
+  ></app-button>
+    <app-button 
+      edit-button 
+      [iconName]="editIcon"
+      (click)="onEditCourse(course)"
+    ></app-button>
+    <app-button 
+      remove-button 
+      [iconName]="deleteIcon"
+      (click)="onDeleteCourse(course)"
+    ></app-button>
+  </app-course-card>
+</div>
