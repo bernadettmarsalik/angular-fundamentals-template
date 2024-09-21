@@ -26,5 +26,7 @@ export class LoginFormComponent {
     }
 
     console.log('Form Submitted:', loginForm.value);
+    this.loginForm.reset();
+
 }
 }
